@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Как поставить GlossReader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="index.html">GlossReader</a>
+      <a href="index.html#features">Возможности</a>
+      <a href="guide.html">Как поставить</a>
+      <a href="notes.html">Что нового</a>
+    </nav>
+
+    <header class="hero">
+      <p class="kicker">Установка</p>
+      <h1>Как поставить</h1>
+      <p class="lead">Сборка для Mac на чипе Apple и для Windows 10/11. Программа без подписи магазина: система один раз спросит разрешение, дальше открывается как обычно.</p>
+      <div class="downloads">
+        <a class="btn" href="downloads/GlossReader.dmg">Скачать для Mac</a>
+        <a class="btn secondary" href="downloads/GlossReader-amd64-installer.exe">Скачать для Windows</a>
+      </div>
+    </header>
+
+    <h2>Mac</h2>
+    <p class="fine">Нужен чип M1, M2, M3 или M4. Intel Mac не поддерживается.</p>
+    <div class="steps">
+      <article class="step"><p><strong class="n">1.</strong> Скачай <code>GlossReader.dmg</code>, открой его и перетащи GlossReader в папку «Программы».</p></article>
+      <article class="step"><p><strong class="n">2.</strong> В Finder: правый клик по GlossReader → «Открыть» → ещё раз «Открыть».</p></article>
+      <article class="step"><p><strong class="n">3.</strong> Если система предлагает только «Переместить в Корзину», открой Терминал и выполни команду ниже. Потом снова правый клик → «Открыть».</p></article>
+    </div>
+    <pre>xattr -cr /Applications/GlossReader.app</pre>
+    <p class="fine">Первый запуск может занять около минуты: в базу кладётся словарь.</p>
+
+    <h2>Windows</h2>
+    <p class="fine">Windows 10 или 11, 64-bit, Intel или AMD. Сборки для ARM-ноутбуков Windows пока нет.</p>
+    <div class="steps">
+      <article class="step"><p><strong class="n">1.</strong> Скачай <code>GlossReader-amd64-installer.exe</code> и запусти его.</p></article>
+      <article class="step"><p><strong class="n">2.</strong> Если SmartScreen пишет «неизвестный издатель»: «Подробнее» → «Выполнить в любом случае».</p></article>
+      <article class="step"><p><strong class="n">3.</strong> Запрос прав администратора нужен, чтобы поставить программу и при необходимости WebView2 — без этого движка окно не откроется.</p></article>
+    </div>
+
+    <h2>Субтитры</h2>
+    <p>В библиотеке есть «+ Субтитры». Нужен файл .vtt, не ролик. Если установлен <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a>, текст субтитров с YouTube сохраняется так:</p>
+    <pre>yt-dlp --skip-download --write-subs --write-auto-subs \
+  --sub-langs "en,en-orig" --sub-format vtt \
+  -o "%(title)s.%(ext)s" "URL_РОЛИКА"</pre>
+    <p>На Mac yt-dlp ставится командой <code>brew install yt-dlp</code>. Скачивается текст, не видео.</p>
+
+    <h2>Караоке по аудиокниге</h2>
+    <p>Добавь свою аудиокнигу и нажми «Синхронизировать речь». Распознавание уже внутри GlossReader. В первый раз скачается модель, около 150 МБ, для этого нужен интернет. Дальше всё считается на этом компьютере. Пока модель качается, книгу можно читать.</p>
+
+    <h2>Разбор фраз</h2>
+    <p>В Настройках выбирается модель. Подсказка есть и в самой панели разбора.</p>
+    <p>Бесплатно и без VPN работает модель на этом же компьютере. В Настройках — провайдер «Свой (OpenAI-совместимый)».</p>
+    <table>
+      <thead>
+        <tr><th></th><th>LM Studio</th><th>Ollama</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Адрес API</td><td><code>http://127.0.0.1:1234/v1</code></td><td><code>http://127.0.0.1:11434/v1</code></td></tr>
+        <tr><td>API-ключ</td><td>пусто</td><td>пусто</td></tr>
+        <tr><td>Модель</td><td>имя загруженной в LM Studio</td><td>как в <code>ollama list</code>, например <code>qwen2.5:7b</code></td></tr>
+      </tbody>
+    </table>
+    <p>В LM Studio включи Local Server. В Ollama сначала <code>ollama pull qwen2.5:7b</code>.</p>
+    <p>Облачные ключи тоже бывают бесплатными. Запрос идёт из GlossReader, поэтому VPN, если он нужен, должен быть включён на компьютере, не только в браузере.</p>
+    <ul>
+      <li><strong>Gemini.</strong> Пункт в Настройках. Ключ: <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a>, кнопка Create API key. Карта обычно не нужна. Модель по умолчанию <code>gemini-2.5-flash</code>.</li>
+      <li><strong>Groq.</strong> Ключ: <a href="https://console.groq.com/keys">console.groq.com/keys</a>, без карты. Модель по умолчанию <code>llama-3.1-8b-instant</code>.</li>
+      <li><strong>OpenRouter.</strong> Провайдер «Свой», адрес <code>https://openrouter.ai/api/v1</code>, ключ с <a href="https://openrouter.ai/keys">openrouter.ai/keys</a>, модель с суффиксом <code>:free</code> или <code>openrouter/free</code>.</li>
+    </ul>
+    <p>Ключи OpenAI и Anthropic почти всегда платные. Подписка ChatGPT, Claude или Gemini в браузере к программе не подключается.</p>
+
+    <h2>Anki</h2>
+    <p>Слова остаются в GlossReader, даже если Anki нет. Чтобы сделать карточки, нужны Anki Desktop и дополнение AnkiConnect. Оба ставятся отдельно.</p>
+    <div class="steps">
+      <article class="step"><p><strong class="n">1.</strong> Скачай Anki с <a href="https://apps.ankiweb.net/">apps.ankiweb.net</a>. На Mac бери версию для Apple Silicon. Запусти и разреши открытие, если система спросит.</p></article>
+      <article class="step"><p><strong class="n">2.</strong> В Anki: Инструменты → Дополнения → Получить дополнения. По-английски: Tools → Add-ons → Get Add-ons. Вставь код <code>2055492159</code>. Это <a href="https://ankiweb.net/shared/info/2055492159">AnkiConnect</a>.</p></article>
+      <article class="step"><p><strong class="n">3.</strong> Перезапусти Anki и оставь его открытым. В GlossReader нажми «В Anki».</p></article>
+    </div>
+    <p>Колода по умолчанию называется как книга. Для вставленного текста — как ты его назвал. В Настройках можно проверить, запущен ли Anki, и сложить все книги в одну колоду. Если Anki закрыт, кнопка скажет, что он недоступен. Слова в читалке при этом остаются.</p>
+
+    <h2>Где лежат книги и слова</h2>
+    <p>На Mac: <code>~/Library/Application Support/MyReader</code>. На Windows: <code>%AppData%\MyReader</code>. Папка называется MyReader, чтобы не потерять библиотеку, собранную в ранних сборках. Удаление программы эту папку не стирает.</p>
+
+    <footer>© Анжела Соменкова</footer>
+  </div>
+</body>
+</html>
