@@ -1,0 +1,33 @@
+:root {
+  color-scheme: light;
+  --ink: #1c2430;
+  --muted: #5c6b80;
+  --paper: #f6f1e8;
+  --btn: #2c4a7c;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 18px/1.5 Georgia, "Iowan Old Style", serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+main { max-width: 38rem; margin: 0 auto; padding: 4rem 1.25rem 5rem; }
+.kicker { letter-spacing: 0.04em; color: var(--muted); margin: 0 0 0.5rem; }
+h1 { font-size: 2.6rem; line-height: 1.1; margin: 0 0 1rem; }
+h2 { font-size: 1.4rem; margin: 2.5rem 0 0.5rem; }
+.lead { font-size: 1.2rem; }
+.downloads { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0.5rem; }
+.btn {
+  display: inline-block;
+  background: var(--btn);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.7rem 1.1rem;
+  border-radius: 8px;
+}
+.btn.secondary { background: transparent; color: var(--btn); border: 1px solid var(--btn); }
+.fine, .author { color: var(--muted); font-size: 0.95rem; }
+code { font-family: ui-monospace, monospace; font-size: 0.9em; }
+ul { padding-left: 1.2rem; }
+li { margin: 0.6rem 0; }
