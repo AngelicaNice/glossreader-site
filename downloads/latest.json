@@ -1,4 +1,5 @@
 {
   "version": "2.0.2",
-  "mac": "https://glossreader.app/downloads/GlossReader.dmg"
+  "mac": "https://glossreader.app/downloads/GlossReader.dmg",
+  "windows": "https://glossreader.app/downloads/GlossReader-amd64-installer.exe"
 }
