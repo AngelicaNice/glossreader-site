@@ -3,5 +3,5 @@
   "mac": "https://glossreader.app/downloads/GlossReader.dmg",
   "windows": "https://glossreader.app/downloads/GlossReader-amd64-installer.exe",
   "ipad": "https://glossreader.app/downloads/manifest.plist",
-  "ipad_version": "2.0.23"
+  "ipad_version": "2.0.24"
 }
