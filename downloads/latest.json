@@ -1,7 +1,8 @@
 {
-  "version": "2.0.17",
+  "version": "2.0.19",
   "mac": "https://glossreader.app/downloads/GlossReader.dmg",
   "windows": "https://glossreader.app/downloads/GlossReader-amd64-installer.exe",
   "ipad": "https://glossreader.app/downloads/manifest.plist",
-  "ipad_version": "2.0.24"
+  "ipad_version": "2.0.24",
+  "mac_sig": ""
 }
