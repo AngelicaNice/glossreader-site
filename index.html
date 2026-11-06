@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GlossReader — читалка для изучения английского</title>
+  <link rel="stylesheet" href="style.css?v=2026-11-07">
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="index.html">GlossReader</a>
+      <a href="index.html#features">Возможности</a>
+      <a href="index.html#video">Видео</a>
+      <a href="guide.html">Как поставить</a>
+      <a href="notes.html">Что нового</a>
+      <a href="support.html">Поддержка</a>
+    </nav>
+
+    <header class="hero">
+      <p class="kicker">Читалка для изучения английского</p>
+      <h1>Читай книгу и забирай из неё слова.</h1>
+      <p class="lead">GlossReader 2.0 открывает EPUB, PDF, свой текст, аудио и видео. Рядом со страницей — перевод, уровень слова, озвучка и разбор фразы. Аудиокнигу и ролик с субтитрами можно смотреть так, чтобы строка подсвечивалась вместе со звуком.</p>
+      <div class="downloads">
+        <a class="btn" href="downloads/GlossReader.dmg">Скачать для Mac</a>
+        <a class="btn secondary" href="downloads/GlossReader-amd64-installer.exe">Скачать для Windows</a>
+        <a class="btn secondary" href="downloads/GlossReader.apk">Скачать для Android</a>
+      </div>
+      <p class="fine">Mac: чип Apple, M1 и новее. Windows: 10 или 11, 64-bit. Android: 8 и новее. Как открыть сборку без подписи — на странице <a href="guide.html">как поставить</a>. iPad и iPhone: версия для App Store готовится.</p>
+    </header>
+
+    <h2 id="video">Три минуты о GlossReader</h2>
+    <!-- The YouTube player loads only on click: until then the page talks to nobody
+         but GitHub Pages, as privacy.html promises. It starts muted so it never
+         surprises anyone with sound. Without JavaScript the link opens the video
+         on YouTube. -->
+    <div class="video" data-youtube="9td3zvBmm-w">
+      <a href="https://youtu.be/9td3zvBmm-w" aria-label="Смотреть ролик о GlossReader">
+        <img src="img/promo-poster.jpg" alt="Кадр из ролика: правый клик по слову abhorrent открывает перевод и озвучку" width="1280" height="720" loading="lazy">
+        <span class="play" aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <h2 id="features">Что умеет</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Что можно читать</h3>
+        <p>Книги EPUB. PDF, если в файле уже есть выделяемый текст, а не скан-картинка. Любой английский текст, вставленный руками. Субтитры .vtt. Видео mp4, webm или m4v — с файлом субтитров или с расшифровкой большой моделью. Только аудио тоже можно загрузить: текст снимет та же модель, если её включить в Настройках.</p>
+      </article>
+      <article class="card">
+        <h3>Словарь на странице</h3>
+        <p>Правый клик по слову — перевод из встроенного англо-русского словаря Wiktionary. Слово можно сразу озвучить голосом системы. Притяжательное ’s не мешает: cat’s ищется как cat.</p>
+      </article>
+      <article class="card">
+        <h3>Уровни и «уже знаю»</h3>
+        <p>Подсветка по CEFR, от A1 до C2, и по частотности: топ-1 тысяча, 5 тысяч, 20 тысяч и редкие. Чипами включаешь, что хочешь видеть. «Уже знаю» снимает подсветку во всех книгах. Слова, которых нет в списках, тоже можно красить как редкие, чтобы они не терялись среди знакомых.</p>
+      </article>
+      <article class="card">
+        <h3>Свой список слов</h3>
+        <p>Слово уходит в список вместе с предложением из книги. Уже добавленные подсвечиваются жёлтым. В главе видно, какие слова какого уровня встретились. Поиск по книге и место, где остановилась, сохраняются.</p>
+      </article>
+      <article class="card">
+        <h3>Частые и глоссарий</h3>
+        <p>«Частые» — слова этой книги по частоте в английском, сначала самые обычные, с переводом. «Глоссарий» — чеклист топ-1, 3, 5, 7 или 10 тысяч: весь английский или только слова из открытой книги. Галочка «знаю» прячет слово в тексте. Отсюда же его можно озвучить и отправить в Anki.</p>
+      </article>
+      <article class="card">
+        <h3>Разбор фразы</h3>
+        <p>Выделила кусок, отправила в очередь, нажала «Разобрать». Ключ API или модель на этом компьютере задаются в Настройках. Подписка ChatGPT, Claude или Gemini в браузере сюда не подключается.</p>
+      </article>
+      <article class="card">
+        <h3>Караоке и диктант</h3>
+        <p>К книге добавляется своя аудиокнига. После синхронизации предложение подсвечивается вместе с голосом, клик по тексту перематывает запись. В диктанте после фразы или выбранного отрывка ставится пауза, чтобы успеть записать.</p>
+      </article>
+      <article class="card">
+        <h3>iPad и iPhone</h3>
+        <p>Та же читалка для планшета и телефона: EPUB и PDF из «Файлов» и iCloud Drive, перевод по долгому нажатию, уровни и «уже знаю», озвучка голосом iOS, разбор фразы своим ключом. Книгу можно открыть прямо из «Поделиться». Колоды для Anki, свои и готовые (уровни CEFR, глаголы, идиомы), уходят файлом через меню «Поделиться». Версия готовится к выходу в App Store.</p>
+      </article>
+      <article class="card">
+        <h3>Anki по желанию</h3>
+        <p>Список слов живёт в GlossReader и без Anki. Карточки — если на этом компьютере открыт Anki Desktop с дополнением AnkiConnect. Колода называется как книга, либо все книги складываются в одну.</p>
+      </article>
+    </div>
+
+    <h2>Дальше по страницам</h2>
+    <div class="cards">
+      <article class="card">
+        <h3><a href="guide.html">Как поставить</a></h3>
+        <p>Mac и Windows, субтитры, караоке, бесплатный разбор фраз и Anki. То, что раньше было в записке для друзей.</p>
+      </article>
+      <article class="card">
+        <h3><a href="notes.html">Что нового</a></h3>
+        <p>Короткие заметки о сборках. Новая возможность появляется здесь, сверху.</p>
+      </article>
+      <article class="card">
+        <h3><a href="support.html">Поддержка</a></h3>
+        <p>Что написать, если сломалось, ответы на частые вопросы и почта. <a href="privacy.html">Политика конфиденциальности</a>.</p>
+      </article>
+    </div>
+
+    <footer>© Анжела Соменкова · <a href="privacy.html">Политика конфиденциальности</a> · <a href="support.html">Поддержка</a> · <a href="data.html">Данные и лицензии</a> · <a href="mailto:anzhela.somenkova@gmail.com">anzhela.somenkova@gmail.com</a></footer>
+  </div>
+  <script>
+    document.querySelectorAll('.video[data-youtube]').forEach(function (box) {
+      box.querySelector('a').addEventListener('click', function (e) {
+        e.preventDefault();
+        var player = document.createElement('iframe');
+        player.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.youtube + '?autoplay=1&mute=1&rel=0';
+        player.title = 'Ролик о GlossReader';
+        player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        player.allowFullscreen = true;
+        box.replaceChildren(player);
+      });
+    });
+  </script>
+</body>
+</html>
