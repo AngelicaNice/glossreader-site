@@ -1,0 +1,11 @@
+{
+  "version": "2.0.57",
+  "mac": "https://glossreader.app/downloads/GlossReader.dmg",
+  "windows": "https://glossreader.app/downloads/GlossReader-amd64-installer.exe",
+  "ipad": "https://glossreader.app/downloads/manifest.plist",
+  "ipad_version": "2.0.69",
+  "mac_sig": "",
+  "windows_sig": "",
+  "android": "https://glossreader.app/downloads/GlossReader.apk",
+  "android_version": "2.0.60"
+}

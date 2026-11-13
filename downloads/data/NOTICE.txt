@@ -1,0 +1,69 @@
+GlossReader: open data copy (no DRM, no technical restrictions)
+================================================================
+
+These are the data files that ship inside the GlossReader app, as plain files.
+Source and licence of each file are below (ATTRIBUTION.md). Files built or
+extended for GlossReader (phrasal verbs, idiom translations, collocations,
+pronunciation, word traps, short glosses) are offered under CC BY-SA 4.0
+(https://creativecommons.org/licenses/by-sa/4.0/legalcode.en), the same terms
+as the Wiktionary-based material they build on. Each upstream source keeps its
+own licence and credit as stated below. Contact: anzhela.somenkova@gmail.com
+
+----------------------------------------------------------------
+
+# Bundled lexicon sources
+
+These files ship inside GlossReader and are imported on first launch if the
+corresponding tables are empty. None of them are Oxford/Cambridge products.
+
+| File | What it is |
+| --- | --- |
+| `wty-en-ru.zip` | English→Russian dictionary from Wiktionary, Yomitan layout ([wiktionary-to-yomitan](https://github.com/yomidevs/wiktionary-to-yomitan)). Wiktionary text is CC BY-SA. |
+| `kaikki-en-ru.jsonl.gz` | English headwords from Russian Wiktionary via [Kaikki / Wiktextract](https://kaikki.org/dictionary/downloads/ru/) (`lang_code=en`). CC BY-SA / GFDL. |
+| `freedict-en-ru.jsonl.gz` | FreeDict English–Russian 2025.11.23 (WikDict-generated TEI). CC BY-SA. Its entries are identical to `wikdict-en-ru.jsonl.gz` (FreeDict builds its English–Russian dictionary from WikDict), so the same licence and credit apply. |
+| `wikdict-en-ru.jsonl.gz` | WikDict recommended TEI eng-rus 2025.11.21 (same pipeline as FreeDict, two days earlier). CC BY-SA. |
+| `10000_english_words_cerf_labelled.zip` | English words with CEFR levels A1–C2 (about 10,000 rows, a word can appear once per part of speech). From the Kaggle dataset [10.000 ENGLISH WORDS CERF LABELLED](https://www.kaggle.com/datasets/nezahatkk/10-000-english-words-cerf-labelled) by Nezahat Korkmaz, which merges two lists from [openlanguageprofiles/olp-en-cefrj](https://github.com/openlanguageprofiles/olp-en-cefrj): the CEFR-J Wordlist Version 1.5 (A1–B2) and the Octanove vocabulary profile C1/C2 version 1.0. CEFR-J: copyright Tono Laboratory, Tokyo University of Foreign Studies; free for research and commercial use with acknowledgement: *The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tokyo University of Foreign Studies.* Octanove vocabulary profile: CC BY-SA 4.0. The "Apache 2.0" label on the Kaggle page is the uploader's and does not cover this data. |
+| `word_frequency.zip` | The 307,000 most frequent English words in order of frequency (rank 1 = most frequent), used for word ranks. Built by `scripts/build-word-frequency.py` from the [wordfreq](https://github.com/rspeer/wordfreq) package (Robyn Speer, *rspeer/wordfreq*, Zenodo, [doi:10.5281/zenodo.7199437](https://doi.org/10.5281/zenodo.7199437); data CC BY-SA 4.0, credits as for the next rows). Changes made here: only plain lowercase words kept, frequencies scaled to integers. |
+| `bnc_coca_headwords.zip` | Headwords of the first 10,000 BNC/COCA word families (Paul Nation, Victoria University of Wellington). Used for the glossary's Schmitt / Nation / Milton scale chips. [Source](https://www.wgtn.ac.nz/lals/resources/paul-nations-resources/vocabulary-lists). Cite as: *Nation, I.S.P. (2017). The BNC/COCA Level 6 word family lists (Version 1.0.0) [Data file]. Available from http://www.victoria.ac.nz/lals/staff/paul-nation.aspx.* The author states on his resources page that the resources may be used under CC BY-SA 4.0 or the GNU GPL. |
+| `wordnet_synonyms.zip` | Public English synonyms list from Kaggle (`duketemon/wordnet-synonyms`, Princeton WordNet 3.0). WordNet 3.0 licence: the full text is in `frontend/src/lib/licenseNotices.ts` and is shown in the app. |
+| `phrasal-en-ru.jsonl.gz` | English phrasal verbs with Russian glosses. Built by `scripts/build-phrasal.py` from the WikDict and Kaikki layers above (Wiktionary, CC BY-SA; headwords of 2–4 words made of a verb and particles) and from `scripts/phrasal-own.tsv`, a list of common phrasal and prepositional verbs written for GlossReader from general knowledge of the language; it is not copied or adapted from any book, dictionary, list or website. Changes made here: stress marks removed, glosses merged and cut to eight per verb. |
+| `idiomx-en.jsonl.gz` | About 8,000 multi-word idioms and proverbs with an English gloss, from [IdiomX](https://huggingface.co/datasets/aymansharara/IdiomX) by Ayman Sharara (CC BY-SA 4.0 per the dataset's `DATASET_LICENSE.md`). Only the rows labelled `wiktionary_cc_by_sa_4_0` (Wiktionary via Kaikki, CC BY-SA 4.0) and `wordnet` (Princeton WordNet licence, see below) are kept; rows from slang lists, subtitles, Urban Dictionary and language-model-invented idioms are dropped. The glosses were written by a language model from the Wiktionary and WordNet entries. Filter: `scripts/filter-idiomx.py`. |
+| `idioms-en-ru.tsv` | Russian translations of all 8,201 idioms and proverbs in `idiomx-en.jsonl.gz`, shown above the English definition in the glossary. Written for GlossReader (one translation or explanation per idiom, keyed by the idiom text). Derived from the IdiomX idiom list and its English glosses, so it follows the same CC BY-SA terms. |
+| `gaplex-en-ru.jsonl.gz` | Short Russian glosses for Nation-scale lemmas that Wiktionary EN→RU misses. Most senses reused from Kaikki / FreeDict / WikDict (CC BY-SA); the rest are compact filler glosses so the glossary is not empty. |
+| `lemma_pos_freq.tsv.gz` (word frequencies) | How often each English lemma is used per million words, as a noun, verb, adjective, etc. (the 20 000 most frequent lemma and part-of-speech pairs). The word-form frequencies behind it come from the [wordfreq](https://github.com/rspeer/wordfreq) package: Robyn Speer, *rspeer/wordfreq*, Zenodo, [doi:10.5281/zenodo.7199437](https://doi.org/10.5281/zenodo.7199437); its data is licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). wordfreq itself combines Wikipedia, subtitles (OpenSubtitles and SUBTLEX-US by Marc Brysbaert et al., used with the authors' permission on condition that they are credited), news, Google Books Ngrams, OSCAR web text, Twitter and Reddit; see its README for the full credits. Changes made here: frequencies were split over lemmas and parts of speech (next row), summed, rounded to three significant digits and cut to the top 20 000 pairs. |
+| `lemma_pos_freq.tsv.gz` (part-of-speech shares) | The split of each word form over parts of speech was counted by tagging 460 English-language fiction books from [Project Gutenberg](https://www.gutenberg.org/) (public domain in the USA; about 55 million tokens) with [spaCy](https://spacy.io/) `en_core_web_sm` (MIT). Only the resulting counts are used; no text from the books or data from the model is included. Rebuild with `scripts/build-lemma-pos-freq.py`. |
+| `word_ipa.tsv.gz` | American pronunciation of English words in IPA, shown next to the word in the popup and in the word lists. Built by `scripts/build-word-ipa.py` from [open-dict-data/ipa-dict](https://github.com/open-dict-data/ipa-dict) `en_US.txt` (MIT, Copyright (c) 2016 dohliam), itself generated from the CMU Pronouncing Dictionary, Copyright (C) 1993-2015 Carnegie Mellon University, used under its BSD-style licence (notice below). Changes made here: r and l written without the dark-l and ɹ marks, schwa spelling normalised, British spellings and simple derived forms added from their base words. |
+| `word_traps.tsv.gz` | Groups of English words that sound the same or almost the same but mean different things (their / there, affect / effect, ship / sheep), for the glossary. Built by `scripts/build-word-traps.py`: exact homophones are computed from the transcriptions in `word_ipa.tsv.gz`; near-homophones are word groups hand-picked from lists of commonly confused words, for example [Grammar Monster](https://www.grammar-monster.com/easily_confused_words.htm) and [Phillip M. Feldman's list of English homophones](https://phillipmfeldman.org/English/Homophones.html). Only the groups of words are used, no text from those pages. |
+| `collocations-en-ru.tsv` | About 1,850 common English collocations (verb + noun, adjective + noun, adverb + adjective, word + preposition, set prepositional phrases) with Russian translations, for the glossary. Written for GlossReader from general knowledge of the language; it is not copied or adapted from any book, dictionary or website (Oxford, Longman, EnglishClub and similar lists are copyrighted and were not used). |
+
+Readers can replace any of these from Settings without reinstalling.
+
+The app shows the same credits and the full licence texts under About → "Licences and data sources" (`frontend/src/lib/licenseNotices.ts` for these files, `frontend/src/assets/third-party-licenses.txt` for the libraries, generated by `scripts/gen-third-party-licenses.py`). Keep the three in step when a file here changes.
+
+### CMU Pronouncing Dictionary notice
+
+Copyright (C) 1993-2015 Carnegie Mellon University. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. The contents of this file are deemed to be source code.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+This work was supported in part by funding from the Defense Advanced Research Projects Agency, the Office of Naval Research and the National Science Foundation of the United States of America, and by member companies of the Carnegie Mellon Sphinx Speech Consortium. We acknowledge the contributions of many volunteers to the expansion and improvement of this dictionary.
+
+THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY NOR ITS EMPLOYEES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+### Princeton WordNet 3.0 licence
+
+WordNet Release 3.0
+
+This software and database is being provided to you, the LICENSEE, by Princeton University under the following license. By obtaining, using and/or copying this software and database, you agree that you have read, understood, and will comply with these terms and conditions.:
+
+Permission to use, copy, modify and distribute this software and database and its documentation for any purpose and without fee or royalty is hereby granted, provided that you agree to comply with the following copyright notice and statements, including the disclaimer, and that the same appear on ALL copies of the software, database and documentation, including modifications that you make for internal use or for distribution.
+
+WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.
+
+THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED. BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT- ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+
+The name of Princeton University or Princeton may not be used in advertising or publicity pertaining to distribution of the software and/or database. Title to copyright in this software, database and any associated documentation shall at all times remain with Princeton University and LICENSEE agrees to preserve same.

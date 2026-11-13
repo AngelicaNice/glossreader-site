@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a2437">
+  <title>GlossReader: данные и лицензии / Data and licences</title>
+  <link rel="preload" href="fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/literata-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=2026-11-12b">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+  <header class="top">
+    <div class="wide">
+    <nav class="nav" aria-label="Разделы">
+      <a class="brand" href="index.html"><img src="icon-192.png" alt="" width="34" height="34">GlossReader</a>
+      <a href="index.html#features">Возможности</a>
+      <a href="index.html#languages">Другие языки</a>
+      <a href="guide.html">Как поставить</a>
+      <a href="notes.html">Что нового</a>
+      <a href="support.html">Поддержка</a>
+    </nav>
+      <div class="page-head">
+      <h1>Данные и лицензии</h1>
+      <p class="lead">Словари и списки слов внутри GlossReader собраны из открытых данных. Вот те же файлы обычным архивом, без защиты и ограничений: скачивайте, открывайте, используйте на тех же условиях.</p>
+      <div class="downloads">
+        <a class="btn" href="downloads/data/glossreader-data.zip" data-goatcounter-click="download-glossreader-data.zip">Скачать все данные (14 МБ)</a>
+        <a class="btn secondary" href="downloads/data/NOTICE.txt" data-goatcounter-click="download-NOTICE.txt">Источники и лицензии (NOTICE.txt)</a>
+      </div>
+    
+      </div>
+    </div>
+  </header>
+
+  <main class="prose roomy">
+    <h2>Зачем это здесь</h2>
+    <p>Приложение для iPhone и iPad распространяется через App Store, а он защищает приложения от копирования. Лицензия CC BY-SA, под которой выпущена большая часть данных, не позволяет ограничивать получателя техническими мерами. Поэтому те же данные лежат здесь простыми файлами. Кода приложения и ваших книг в архиве нет.</p>
+
+    <h2>Что в архиве</h2>
+    <p class="fine">Файлы, которые собраны или написаны для GlossReader, предлагаются на условиях CC BY-SA 4.0, как и Викисловарь, на котором они построены. У каждого исходного набора своя лицензия и своё указание авторов: они перечислены ниже и в NOTICE.txt. Лицензия: <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.en">CC BY-SA 4.0</a>.</p>
+    <table>
+      <thead><tr><th>Файл</th><th>Что внутри</th><th>Источник и лицензия</th></tr></thead>
+      <tbody>
+        <tr><td><code>wty-en-ru.zip</code></td><td>Англо-русский словарь из Викисловаря (формат Yomitan).</td><td>Wiktionary, <a href="https://github.com/yomidevs/wiktionary-to-yomitan">wiktionary-to-yomitan</a>. CC BY-SA.</td></tr>
+        <tr><td><code>kaikki-en-ru.jsonl.gz</code></td><td>Английские слова из русского Викисловаря (Kaikki / Wiktextract).</td><td><a href="https://kaikki.org/dictionary/downloads/ru/">kaikki.org</a>. CC BY-SA / GFDL.</td></tr>
+        <tr><td><code>wikdict-en-ru.jsonl.gz, freedict-en-ru.jsonl.gz</code></td><td>Англо-русский словарь WikDict / FreeDict (это одни и те же данные).</td><td><a href="https://www.wikdict.com/page/about">WikDict</a>. CC BY-SA.</td></tr>
+        <tr><td><code>10000_english_words_cerf_labelled.zip</code></td><td>Уровни CEFR A1–C2, около 10 000 слов.</td><td>CEFR-J Wordlist 1.5 (Tono Laboratory, Tokyo University of Foreign Studies; свободно, в том числе в коммерческих целях, с указанием источника) и Octanove C1/C2 (CC BY-SA 4.0). Собрано в наборе <a href="https://www.kaggle.com/datasets/nezahatkk/10-000-english-words-cerf-labelled">Kaggle</a> из <a href="https://github.com/openlanguageprofiles/olp-en-cefrj">olp-en-cefrj</a>.</td></tr>
+        <tr><td><code>word_frequency.zip</code></td><td>307 000 самых частотных английских слов по порядку частоты.</td><td><a href="https://github.com/rspeer/wordfreq">wordfreq</a>, Robyn Speer (<a href="https://doi.org/10.5281/zenodo.7199437">doi:10.5281/zenodo.7199437</a>). CC BY-SA 4.0. Оставлены только обычные слова строчными, частоты округлены до целых.</td></tr>
+        <tr><td><code>lemma_pos_freq.tsv.gz</code></td><td>Частота лемм по частям речи, 20 000 самых частых пар.</td><td>wordfreq (CC BY-SA 4.0) и разметка 460 книг Project Gutenberg программой spaCy (MIT); текстов и данных модели в файле нет.</td></tr>
+        <tr><td><code>bnc_coca_headwords.zip</code></td><td>Заглавные слова первых 10 000 семейств BNC/COCA (Paul Nation).</td><td><a href="https://www.wgtn.ac.nz/lals/resources/paul-nations-resources/vocabulary-lists">Victoria University of Wellington</a>. По заявлению автора CC BY-SA 4.0 или GNU GPL.</td></tr>
+        <tr><td><code>wordnet_synonyms.zip</code></td><td>Синонимы из Princeton WordNet 3.0.</td><td><a href="https://wordnet.princeton.edu/">Princeton University</a>. Лицензия WordNet, текст в NOTICE.txt.</td></tr>
+        <tr><td><code>phrasal-en-ru.jsonl.gz</code></td><td>Фразовые глаголы с русскими пояснениями.</td><td>Из слоёв Викисловаря выше и собственного списка GlossReader. CC BY-SA 4.0.</td></tr>
+        <tr><td><code>idiomx-en.jsonl.gz</code></td><td>Около 8000 идиом и пословиц с английским пояснением.</td><td><a href="https://huggingface.co/datasets/aymansharara/IdiomX">IdiomX</a>, Ayman Sharara (CC BY-SA 4.0). Оставлены только строки из Викисловаря и WordNet; пояснения написала языковая модель по словарным статьям.</td></tr>
+        <tr><td><code>idioms-en-ru.tsv</code></td><td>Русские переводы этих идиом.</td><td>Написаны для GlossReader по списку IdiomX. CC BY-SA 4.0.</td></tr>
+        <tr><td><code>gaplex-en-ru.jsonl.gz</code></td><td>Короткие русские пояснения к словам, которых нет в Викисловаре.</td><td>В основном из слоёв Викисловаря выше. CC BY-SA.</td></tr>
+        <tr><td><code>word_ipa.tsv.gz</code></td><td>Американская транскрипция IPA.</td><td><a href="https://github.com/open-dict-data/ipa-dict">ipa-dict</a> (MIT) на основе CMU Pronouncing Dictionary (© Carnegie Mellon University, BSD-подобная лицензия, текст в NOTICE.txt).</td></tr>
+        <tr><td><code>word_traps.tsv.gz</code></td><td>Группы слов, которые звучат одинаково или похоже.</td><td>Омофоны вычислены по транскрипциям, остальные группы подобраны вручную по спискам часто путаемых слов (тексты страниц не использованы). CC BY-SA 4.0.</td></tr>
+        <tr><td><code>collocations-en-ru.tsv</code></td><td>Около 1850 устойчивых сочетаний с русским переводом.</td><td>Написаны для GlossReader. CC BY-SA 4.0.</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">Тот же перечень с полными текстами лицензий показывается в приложении: «О программе» → «Лицензии и источники данных». В приложении любой из этих файлов можно заменить в Настройках.</p>
+
+    <h2>Данные немецкого, польского и испанского приложений</h2>
+    <p class="fine">В GlossReader Deutsch, Polski и Español лежат свои данные. Источники те же открытые, у каждого своя лицензия и указание авторов; то же и с полными текстами показано в самих приложениях: «О программе» → «Лицензии и источники данных».</p>
+    <ul>
+      <li><strong>Формы слов и английские пояснения.</strong> Английский Викисловарь через <a href="https://kaikki.org/">Kaikki / Wiktextract</a> (Tatu Ylönen). CC BY-SA 4.0 и GFDL. Формы собраны в одну таблицу, слова приведены к строчным буквам.</li>
+      <li><strong>Русские переводы.</strong> <a href="https://www.wikdict.com/page/about">WikDict</a> (пары de-ru, pl-ru, es-ru; DBnary и Викисловарь). CC BY-SA.</li>
+      <li><strong>Частотность слов.</strong> <a href="https://github.com/rspeer/wordfreq">wordfreq</a>, Robyn Speer (<a href="https://doi.org/10.5281/zenodo.7199437">doi:10.5281/zenodo.7199437</a>). CC BY-SA 4.0.</li>
+      <li><strong>Уровни испанских слов A1–C1.</strong> <a href="https://cental.uclouvain.be/cefrlex/">ELELex</a> из проекта CEFRLex (CENTAL, Université catholique de Louvain; Núria Gala, Thomas François, Kévin Mbarga и др.). <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>: только некоммерческое использование, с указанием авторов и на тех же условиях. Для каждого слова взят самый лёгкий уровень, на котором оно встречается в учебниках.</li>
+      <li><strong>Короткие русские пояснения к самым частым служебным словам</strong> написаны для GlossReader.</li>
+    </ul>
+
+    <hr>
+
+    <h1>Data and licences</h1>
+    <p>The dictionaries and word lists inside GlossReader are built from open data. The same files are offered here as a plain archive with no DRM or technical restrictions, because the iPhone and iPad app is distributed through the App Store, which protects apps against copying, and CC BY-SA does not allow restricting the recipient by technical means. The archive contains no app code and no user books.</p>
+    <p><a href="downloads/data/glossreader-data.zip" data-goatcounter-click="download-glossreader-data.zip">glossreader-data.zip</a> (14 MB) · <a href="downloads/data/NOTICE.txt" data-goatcounter-click="download-NOTICE.txt">NOTICE.txt</a> with the source, credit and licence of every file, including the Princeton WordNet licence and the CMU Pronouncing Dictionary notice. Files built or written for GlossReader are offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.en">CC BY-SA 4.0</a>; every upstream source keeps its own licence and credit. Contact: <a href="mailto:anzhela.somenkova@gmail.com">anzhela.somenkova@gmail.com</a>.</p>
+
+    
+
+    <h2>Шрифты сайта</h2>
+    <p>Onest (The Onest Project Authors) и Literata (The Literata Project Authors) под лицензией SIL Open Font License 1.1. Файлы шрифтов лежат на самом сайте, поэтому страницы не обращаются к чужим серверам. Тексты лицензий: <a href="fonts/OFL-Onest.txt">Onest</a>, <a href="fonts/OFL-Literata.txt">Literata</a>.</p>
+  </main>
+
+  <footer class="foot">
+    <div class="wide">
+      <div class="foot-grid">
+        <div>
+          <strong>GlossReader</strong>
+          <p>Читалка для изучения иностранных языков. Её делает одна волонтёр.</p>
+        </div>
+        <ul>
+          <li><a href="guide.html">Как поставить</a></li>
+          <li><a href="notes.html">Что нового</a></li>
+          <li><a href="support.html">Поддержка</a></li>
+          <li><a href="data.html">Данные и лицензии</a></li>
+          <li><a href="privacy.html">Политика конфиденциальности</a></li>
+        </ul>
+        <ul>
+          <li>© Анжела Соменкова</li>
+          <li><a href="mailto:anzhela.somenkova@gmail.com">anzhela.somenkova@gmail.com</a></li>
+          <li><a href="https://t.me/non_player">Telegram: @non_player</a></li>
+        </ul>
+      </div>
+      <div class="foot-base"><span></span><!-- stats-link --></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a2437">
+  <meta name="description" content="Читалка для изучения языков: перевод слова по правому клику, подсветка по уровням A1–C2, озвучка и разбор фразы. Для Mac, Windows и Android.">
+  <title>GlossReader — читалка для изучения английского</title>
+  <link rel="preload" href="fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/literata-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=2026-11-12b">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+  <header class="top">
+    <div class="wide">
+    <nav class="nav" aria-label="Разделы">
+      <a class="brand" href="index.html"><img src="icon-192.png" alt="" width="34" height="34">GlossReader</a>
+      <a href="index.html#features">Возможности</a>
+      <a href="index.html#languages">Другие языки</a>
+      <a href="guide.html">Как поставить</a>
+      <a href="notes.html">Что нового</a>
+      <a href="support.html">Поддержка</a>
+    </nav>
+      <div class="hero">
+        <div class="hero-text">
+          <h1>Читай книгу и забирай из неё слова.</h1>
+          <p class="lead">GlossReader 2.0 открывает EPUB, PDF, свой текст, аудио и видео. Рядом со страницей — перевод, уровень слова, озвучка и разбор фразы. Аудиокнигу и ролик с субтитрами можно смотреть так, чтобы строка подсвечивалась вместе со звуком.</p>
+          <div class="downloads">
+            <a class="btn primary" href="downloads/GlossReader.dmg" data-goatcounter-click="download-GlossReader.dmg">Скачать для Mac<small>чип Apple, M1 и новее</small></a>
+            <a class="btn" href="downloads/GlossReader-amd64-installer.exe" data-goatcounter-click="download-GlossReader-amd64-installer.exe">Скачать для Windows<small>Windows 10 и 11, 64-bit</small></a>
+            <a class="btn" href="downloads/GlossReader.apk" data-goatcounter-click="download-GlossReader.apk">Скачать для Android<small>Android 8 и новее</small></a>
+          </div>
+          <p class="fine">Как открыть сборку без подписи — на странице <a href="guide.html">как поставить</a>. iPad и iPhone: версия для App Store готовится.</p>
+        </div>
+
+        <figure class="reader" id="reader" data-off="">
+          <div class="reader-window">
+            <div class="reader-bar">
+              <span class="reader-title">Alice in Wonderland (демо)</span>
+              <div class="chips" role="group" aria-label="Подсветка по уровням">
+                <button type="button" class="chip" data-lvl="a1" aria-pressed="true">A1</button>
+                <button type="button" class="chip" data-lvl="a2" aria-pressed="true">A2</button>
+                <button type="button" class="chip" data-lvl="b1" aria-pressed="true">B1</button>
+                <button type="button" class="chip" data-lvl="b2" aria-pressed="true">B2</button>
+                <button type="button" class="chip" data-lvl="phrase" aria-pressed="true">фразы</button>
+              </div>
+            </div>
+            <div class="reader-page" lang="en">
+              <p><span class="w name" data-k="alice" role="button" tabindex="0">Alice</span> was <span class="w a2" data-k="beginning" role="button" tabindex="0">beginning</span> to <span class="w a1" data-k="get" role="button" tabindex="0">get</span> <span class="w a1" data-k="very" role="button" tabindex="0">very</span> <span class="w b1" data-k="tired" role="button" tabindex="0">tired</span> of <span class="w a2" data-k="sitting" role="button" tabindex="0">sitting</span> by her <span class="w a1" data-k="sister" role="button" tabindex="0">sister</span> on the <span class="w a2" data-k="bank" role="button" tabindex="0">bank</span>, and of having <span class="w a1" data-k="nothing" role="button" tabindex="0">nothing</span> to do: <span class="w phrase" data-k="oncetwice" role="button" tabindex="0">once or twice</span> she had <span class="w b2" data-k="peeped" role="button" tabindex="0">peeped</span> into the <span class="w a1" data-k="book" role="button" tabindex="0">book</span> her <span class="w a1" data-k="sister" role="button" tabindex="0">sister</span> was reading, but it had no <span class="w a2" data-k="pictures" role="button" tabindex="0">pictures</span> or <span class="w b1" data-k="conversations" role="button" tabindex="0">conversations</span> in it, “and what is the <span class="w a2" data-k="use" role="button" tabindex="0">use</span> of a <span class="w a1" data-k="book" role="button" tabindex="0">book</span>,” <span class="w b1" data-k="thought" role="button" tabindex="0">thought</span> <span class="w name" data-k="alice" role="button" tabindex="0">Alice</span> “<span class="w a2" data-k="without" role="button" tabindex="0">without</span> <span class="w a2" data-k="pictures" role="button" tabindex="0">pictures</span> or <span class="w b1" data-k="conversations" role="button" tabindex="0">conversations</span>?”</p>
+              <p>There was <span class="w a1" data-k="nothing" role="button" tabindex="0">nothing</span> so <span class="w a1" data-k="very" role="button" tabindex="0">very</span> <span class="w b2" data-k="remarkable" role="button" tabindex="0">remarkable</span> in that; nor did <span class="w name" data-k="alice" role="button" tabindex="0">Alice</span> think it so <span class="w a1" data-k="very" role="button" tabindex="0">very</span> much <span class="w phrase" data-k="outofway" role="button" tabindex="0">out of the way</span> to <span class="w a1" data-k="hear" role="button" tabindex="0">hear</span> the <span class="w a1" data-k="rabbit" role="button" tabindex="0">Rabbit</span> say to <span class="w a2" data-k="itself" role="button" tabindex="0">itself</span>, “<span class="w phrase" data-k="ohdear" role="button" tabindex="0">Oh dear</span>! <span class="w phrase" data-k="ohdear" role="button" tabindex="0">Oh dear</span>! I shall be <span class="w a2" data-k="late" role="button" tabindex="0">late</span>!”</p>
+              <div class="pop" role="dialog" aria-label="Перевод слова" lang="ru" hidden>
+                <div class="pop-head"><span class="pop-word"></span><span class="pop-pos"></span><span class="pop-level"></span></div>
+                <p class="pop-tr"></p>
+                <p class="pop-syn"></p>
+                <div class="pop-actions">
+                  <button type="button" data-act="save" aria-pressed="false">+ В словарь</button>
+                  <button type="button" data-act="known">Знаю</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption class="reader-note">Нажмите на слово, чтобы увидеть перевод. Чипы включают и выключают подсветку по уровням, «Знаю» снимает её со слова. Книга: «Алиса в Стране чудес» Льюиса Кэрролла, текст в общественном достоянии.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="features">
+      <div class="wide">
+        <h2>Что умеет</h2>
+        <div class="group">
+          <h3 class="group-title">Читать и понимать</h3>
+          <div class="feats">
+          <article class="feat">
+            <h4>Что можно читать</h4>
+            <p>Книги EPUB. PDF, если в файле уже есть выделяемый текст, а не скан-картинка. Любой английский текст, вставленный руками. Субтитры .vtt. Видео mp4, webm или m4v — с файлом субтитров или с расшифровкой большой моделью. Только аудио тоже можно загрузить: текст снимет та же модель, если её включить в Настройках.</p>
+          </article>
+          <article class="feat">
+            <h4>Словарь на странице</h4>
+            <p>Правый клик по слову — перевод из встроенного англо-русского словаря Wiktionary. Слово можно сразу озвучить голосом системы. Притяжательное ’s не мешает: cat’s ищется как cat.</p>
+          </article>
+          <article class="feat">
+            <h4>Разбор фразы</h4>
+            <p>Выделила предложение — рядом сразу открывается разбор: дословный перевод, смысл, грамматика. Если удобнее копить фразы и разбирать пачкой, это включается в Настройках. Ключ API или модель на этом компьютере задаются там же. Подписка ChatGPT, Claude или Gemini в браузере сюда не подключается.</p>
+          </article>
+          <article class="feat">
+            <h4>Караоке и диктант</h4>
+            <p>К книге добавляется своя аудиокнига. После синхронизации предложение подсвечивается вместе с голосом, клик по тексту перематывает запись. В диктанте после фразы или выбранного отрывка ставится пауза, чтобы успеть записать.</p>
+          </article>
+          </div>
+        </div>
+        <div class="group">
+          <h3 class="group-title">Запоминать</h3>
+          <div class="feats">
+          <article class="feat">
+            <h4>Уровни и «уже знаю»</h4>
+            <p>Подсветка по CEFR, от A1 до C2, и по частотности: топ-1 тысяча, 5 тысяч, 20 тысяч и редкие. Чипами включаешь, что хочешь видеть. «Уже знаю» снимает подсветку во всех книгах. Слова, которых нет в списках, тоже можно красить как редкие, чтобы они не терялись среди знакомых.</p>
+          </article>
+          <article class="feat">
+            <h4>Свой список слов</h4>
+            <p>Слово уходит в список вместе с предложением из книги. Уже добавленные подсвечиваются жёлтым. В главе видно, какие слова какого уровня встретились. Поиск по книге и место, где остановилась, сохраняются.</p>
+          </article>
+          <article class="feat">
+            <h4>Частые и глоссарий</h4>
+            <p>«Частые» — слова этой книги по частоте в английском, сначала самые обычные, с переводом. «Глоссарий» — чеклист топ-1, 3, 5, 7 или 10 тысяч: весь английский или только слова из открытой книги. Галочка «знаю» прячет слово в тексте. Отсюда же его можно озвучить и отправить в Anki.</p>
+          </article>
+          <article class="feat">
+            <h4>Anki по желанию</h4>
+            <p>Список слов живёт в GlossReader и без Anki. Карточки — если на этом компьютере открыт Anki Desktop с дополнением AnkiConnect. Колода называется как книга, либо все книги складываются в одну.</p>
+          </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surface" id="video">
+      <div class="wide video-wrap">
+        <h2>Три минуты о GlossReader</h2>
+        <!-- The YouTube player loads only on click: until then the page talks to nobody
+             but GitHub Pages, as privacy.html promises. It starts muted so it never
+             surprises anyone with sound. Without JavaScript the link opens the video
+             on YouTube. -->
+        <div class="video" data-youtube="9td3zvBmm-w">
+          <a href="https://youtu.be/9td3zvBmm-w" aria-label="Смотреть ролик о GlossReader">
+            <img src="img/promo-poster.jpg" alt="Кадр из ролика: правый клик по слову abhorrent открывает перевод и озвучку" width="1280" height="720" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ios">
+      <div class="wide split">
+        <div>
+          <h2>iPad и iPhone</h2>
+          <p>Та же читалка для планшета и телефона: EPUB и PDF из «Файлов» и iCloud Drive, перевод по касанию слова, уровни и «уже знаю», озвучка голосом iOS, разбор фразы своим ключом. Книгу можно открыть прямо из «Поделиться». Колоды для Anki, свои и готовые (уровни CEFR, глаголы, идиомы), уходят файлом через меню «Поделиться». Версия готовится к выходу в App Store.</p>
+        </div>
+        <div class="phones">
+          <figure><img src="img/phone-translation.jpg" alt="iPhone: перевод слова peeped над страницей книги" width="460" height="1000" loading="lazy"></figure>
+          <figure><img src="img/phone-levels.jpg" alt="iPhone: страница книги с подсветкой слов по уровням A1–C2" width="460" height="1000" loading="lazy"></figure>
+          <figure><img src="img/phone-words.jpg" alt="iPhone: свой список слов книги, разложенный по уровням" width="460" height="1000" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surface" id="languages">
+      <div class="wide">
+        <h2>Немецкий, польский, испанский</h2>
+        <p class="section-lead">Для этих языков есть отдельные приложения, тоже бесплатные: книга на чужом языке, перевод слова на русский по правому клику, подсветка по частотности, озвучка голосом компьютера, разбор фразы и Anki. Слово находится и в изменённой форме: падежная, спрягаемая, с приставленным местоимением. Пока только для Mac (чип Apple, M1 и новее). Аудио, видео и караоке остались в английском GlossReader.</p>
+        <div class="editions">
+        <article class="edition">
+          <img src="img/app-de.png" alt="Иконка GlossReader Deutsch: книга с флагами Германии и Австрии" width="76" height="76">
+          <h3>GlossReader Deutsch</h3>
+          <p>Немецкие слова приводятся к начальной форме, составные слова разбираются на части (Haustür = Haus + Tür). Подсветка по частотности.</p>
+          <a class="btn primary" href="downloads/GlossReaderDeutsch.dmg" data-goatcounter-click="download-GlossReaderDeutsch.dmg">Скачать для Mac<small>чип Apple, M1 и новее</small></a>
+        </article>
+        <article class="edition">
+          <img src="img/app-pl.png" alt="Иконка GlossReader Polski: книга с флагами Польши" width="76" height="76">
+          <h3>GlossReader Polski</h3>
+          <p>Польские слова приводятся к начальной форме по падежам и временам. Подсветка по частотности.</p>
+          <a class="btn primary" href="downloads/GlossReaderPolski.dmg" data-goatcounter-click="download-GlossReaderPolski.dmg">Скачать для Mac<small>чип Apple, M1 и новее</small></a>
+        </article>
+        <article class="edition">
+          <img src="img/app-es.png" alt="Иконка GlossReader Español: книга с флагами Испании и Мексики" width="76" height="76">
+          <h3>GlossReader Español</h3>
+          <p>Испанские формы глаголов, в том числе со слитыми местоимениями (dámelo). Подсветка по уровням A1–C1 по списку слов из учебников и по частотности.</p>
+          <a class="btn primary" href="downloads/GlossReaderEspanol.dmg" data-goatcounter-click="download-GlossReaderEspanol.dmg">Скачать для Mac<small>чип Apple, M1 и новее</small></a>
+        </article>
+        </div>
+        <p class="fine" style="margin-top:1.4rem;max-width:46rem">Переводы взяты из Викисловаря; у слов, для которых русского перевода нет, показывается английский с пометкой «англ.». Открывается сборка так же, как GlossReader: <a href="guide.html#editions">как поставить</a>. Эти приложения живут отдельно от английского, у каждого своя библиотека и свои слова.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wide">
+      <div class="foot-grid">
+        <div>
+          <strong>GlossReader</strong>
+          <p>Читалка для изучения иностранных языков. Её делает одна волонтёр.</p>
+        </div>
+        <ul>
+          <li><a href="guide.html">Как поставить</a></li>
+          <li><a href="notes.html">Что нового</a></li>
+          <li><a href="support.html">Поддержка</a></li>
+          <li><a href="data.html">Данные и лицензии</a></li>
+          <li><a href="privacy.html">Политика конфиденциальности</a></li>
+        </ul>
+        <ul>
+          <li>© Анжела Соменкова</li>
+          <li><a href="mailto:anzhela.somenkova@gmail.com">anzhela.somenkova@gmail.com</a></li>
+          <li><a href="https://t.me/non_player">Telegram: @non_player</a></li>
+        </ul>
+      </div>
+      <div class="foot-base"><span></span><!-- stats-link --></div>
+    </div>
+  </footer>
+  <script src="demo.js?v=2026-11-12b"></script>
+  <script>
+    document.querySelectorAll('.video[data-youtube]').forEach(function (box) {
+      box.querySelector('a').addEventListener('click', function (e) {
+        e.preventDefault();
+        var player = document.createElement('iframe');
+        player.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.youtube + '?autoplay=1&mute=1&rel=0';
+        player.title = 'Ролик о GlossReader';
+        player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        player.allowFullscreen = true;
+        box.replaceChildren(player);
+      });
+    });
+  </script>
+</body>
+</html>

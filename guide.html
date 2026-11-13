@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a2437">
+  <title>Как поставить GlossReader</title>
+  <link rel="preload" href="fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/literata-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=2026-11-12b">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+  <header class="top">
+    <div class="wide">
+    <nav class="nav" aria-label="Разделы">
+      <a class="brand" href="index.html"><img src="icon-192.png" alt="" width="34" height="34">GlossReader</a>
+      <a href="index.html#features">Возможности</a>
+      <a href="index.html#languages">Другие языки</a>
+      <a href="guide.html" aria-current="page">Как поставить</a>
+      <a href="notes.html">Что нового</a>
+      <a href="support.html">Поддержка</a>
+    </nav>
+      <div class="page-head">
+      <h1>Как поставить</h1>
+      <p class="lead">Сборка для Mac на чипе Apple, для Windows 10/11 и для Android 8 и новее. Программа без подписи магазина: система один раз спросит разрешение, дальше открывается как обычно.</p>
+      <div class="downloads">
+        <a class="btn" href="downloads/GlossReader.dmg" data-goatcounter-click="download-GlossReader.dmg">Скачать для Mac</a>
+        <a class="btn secondary" href="downloads/GlossReader-amd64-installer.exe" data-goatcounter-click="download-GlossReader-amd64-installer.exe">Скачать для Windows</a>
+        <a class="btn secondary" href="downloads/GlossReader.apk" data-goatcounter-click="download-GlossReader.apk">Скачать для Android</a>
+      </div>
+    
+      </div>
+    </div>
+  </header>
+
+  <main class="prose">
+    <h2>Mac</h2>
+    <p class="fine">Нужен чип M1, M2, M3 или M4. Intel Mac не поддерживается.</p>
+    <div class="steps">
+      <article class="step"><p><strong class="n">1</strong> Скачай <code>GlossReader.dmg</code>, открой его и перетащи GlossReader в папку «Программы».</p></article>
+      <article class="step"><p><strong class="n">2</strong> В Finder: правый клик по GlossReader → «Открыть» → ещё раз «Открыть».</p></article>
+      <article class="step"><p><strong class="n">3</strong> Если система предлагает только «Переместить в Корзину», открой Терминал и выполни команду ниже. Потом снова правый клик → «Открыть».</p></article>
+    </div>
+    <pre>xattr -cr /Applications/GlossReader.app</pre>
+    <p class="fine">Первый запуск может занять около минуты: в базу кладётся словарь.</p>
+
+    <h2 id="editions">GlossReader Deutsch, Polski, Español (Mac)</h2>
+    <p class="fine">Скачай <a href="downloads/GlossReaderDeutsch.dmg" data-goatcounter-click="download-GlossReaderDeutsch.dmg">GlossReaderDeutsch.dmg</a>, <a href="downloads/GlossReaderPolski.dmg" data-goatcounter-click="download-GlossReaderPolski.dmg">GlossReaderPolski.dmg</a> или <a href="downloads/GlossReaderEspanol.dmg" data-goatcounter-click="download-GlossReaderEspanol.dmg">GlossReaderEspanol.dmg</a>. Нужен чип M1 и новее. Ставятся так же, как GlossReader: перетащить в «Программы», правый клик → «Открыть» → ещё раз «Открыть». Если система предлагает только «Переместить в Корзину», выполни в Терминале команду для своего приложения и снова открой его правым кликом:</p>
+    <pre>xattr -cr /Applications/GlossReaderDeutsch.app
+xattr -cr /Applications/GlossReaderPolski.app
+xattr -cr /Applications/GlossReaderEspanol.app</pre>
+    <p class="fine">Эти приложения не трогают библиотеку GlossReader: данные лежат в <code>~/Library/Application Support/GlossReaderDeutsch</code> (Polski, Espanol — рядом, свои папки). Первый запуск может занять около минуты: в базу кладутся словарь и формы слов. Голос берётся из системы: Anna для немецкого, Zosia для польского, Mónica или Paulina для испанского; если его нет, Настройки → Озвучка подскажет, где его включить.</p>
+
+    <h2>Windows</h2>
+    <p class="fine">Windows 10 или 11, 64-bit, Intel или AMD. Сборки для ARM-ноутбуков Windows пока нет.</p>
+    <div class="steps">
+      <article class="step"><p><strong class="n">1</strong> Скачай <code>GlossReader-amd64-installer.exe</code> и запусти его.</p></article>
+      <article class="step"><p><strong class="n">2</strong> Если Chrome пишет, что заблокировал опасный файл: открой «Загрузки» (Ctrl+J), у <code>GlossReader-amd64-installer.exe</code> нажми ⋮ → «Скачать опасный файл» и подтверди. Так Chrome встречает новые программы без цифровой подписи.</p></article>
+      <article class="step"><p><strong class="n">3</strong> Если SmartScreen пишет «неизвестный издатель»: «Подробнее» → «Выполнить в любом случае».</p></article>
+      <article class="step"><p><strong class="n">4</strong> Запрос прав администратора нужен, чтобы поставить программу и при необходимости WebView2 — без этого движка окно не откроется.</p></article>
+    </div>
+
+    <h2>Android</h2>
+    <p class="fine">Нужен Android 8 или новее. В Google Play приложения нет, файл ставится напрямую.</p>
+    <div class="steps">
+      <article class="step"><p><strong class="n">1</strong> Скачай <code>GlossReader.apk</code> на телефоне и открой файл.</p></article>
+      <article class="step"><p><strong class="n">2</strong> Android спросит разрешение на установку из этого источника: браузера или мессенджера. Разреши.</p></article>
+      <article class="step"><p><strong class="n">3</strong> Если Play Protect предупредит о неизвестном разработчике: «Подробнее» → «Всё равно установить».</p></article>
+      <article class="step"><p><strong class="n">4</strong> Первый запуск дольше обычных: приложение готовит словари, на медленном телефоне это занимает несколько минут.</p></article>
+    </div>
+
+    <h2>Субтитры</h2>
+    <p>В библиотеке есть «+ Субтитры». Нужен готовый файл .vtt, не ролик. Если у файла другой формат, например .srt, его можно превратить в .vtt любым онлайн-конвертером.</p>
+    <p>Где взять субтитры: у самого видеосервиса, если он разрешает их скачивать. Для YouTube существует программа с открытым кодом <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a>; как ею пользоваться, написано в её документации, и применять её стоит только там, где это допускают правила сервиса и автора ролика. Готовые субтитры к популярным фильмам и мультфильмам можно поискать в интернете: на разных сайтах их выкладывают сами пользователи, и не всё там можно свободно скачивать. Читайте условия сайта и помните об авторских правах.</p>
+
+    <h2>Караоке по аудиокниге</h2>
+    <p>Добавь свою аудиокнигу и нажми «Синхронизировать речь». Распознавание уже внутри GlossReader. В первый раз скачается модель, около 150 МБ, для этого нужен интернет. Дальше всё считается на этом компьютере. Пока модель качается, книгу можно читать.</p>
+
+    <h2>Разбор фраз</h2>
+    <p>В Настройках выбирается модель. Подсказка есть и в самой панели разбора.</p>
+    <p>Бесплатно и без VPN работает модель на этом же компьютере. В Настройках — провайдер «Свой (OpenAI-совместимый)».</p>
+    <table>
+      <thead>
+        <tr><th></th><th>LM Studio</th><th>Ollama</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Адрес API</td><td><code>http://127.0.0.1:1234/v1</code></td><td><code>http://127.0.0.1:11434/v1</code></td></tr>
+        <tr><td>API-ключ</td><td>пусто</td><td>пусто</td></tr>
+        <tr><td>Модель</td><td>имя загруженной в LM Studio</td><td>как в <code>ollama list</code>, например <code>qwen2.5:7b</code></td></tr>
+      </tbody>
+    </table>
+    <p>В LM Studio включи Local Server. В Ollama сначала <code>ollama pull qwen2.5:7b</code>.</p>
+    <p>Облачные ключи тоже бывают бесплатными. Запрос идёт из GlossReader, поэтому VPN, если он нужен, должен быть включён на компьютере, не только в браузере.</p>
+    <ul>
+      <li><strong>Gemini.</strong> Пункт в Настройках. Ключ: <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a>, кнопка Create API key. Карта обычно не нужна. Модель по умолчанию <code>gemini-2.5-flash</code>.</li>
+      <li><strong>Groq.</strong> Ключ: <a href="https://console.groq.com/keys">console.groq.com/keys</a>, без карты. Модель по умолчанию <code>llama-3.1-8b-instant</code>.</li>
+      <li><strong>OpenRouter.</strong> Провайдер «Свой», адрес <code>https://openrouter.ai/api/v1</code>, ключ с <a href="https://openrouter.ai/keys">openrouter.ai/keys</a>, модель с суффиксом <code>:free</code> или <code>openrouter/free</code>.</li>
+    </ul>
+    <p>Ключи OpenAI и Anthropic почти всегда платные. Подписка ChatGPT, Claude или Gemini в браузере к программе не подключается.</p>
+
+    <h2>Anki</h2>
+    <p>Слова остаются в GlossReader, даже если Anki нет. Чтобы сделать карточки, нужны Anki Desktop и дополнение AnkiConnect. Оба ставятся отдельно.</p>
+    <div class="steps">
+      <article class="step"><p><strong class="n">1</strong> Скачай Anki с <a href="https://apps.ankiweb.net/">apps.ankiweb.net</a>. На Mac бери версию для Apple Silicon. Запусти и разреши открытие, если система спросит.</p></article>
+      <article class="step"><p><strong class="n">2</strong> В Anki: Инструменты → Дополнения → Получить дополнения. По-английски: Tools → Add-ons → Get Add-ons. Вставь код <code>2055492159</code>. Это <a href="https://ankiweb.net/shared/info/2055492159">AnkiConnect</a>.</p></article>
+      <article class="step"><p><strong class="n">3</strong> Перезапусти Anki и оставь его открытым. В GlossReader нажми «В Anki».</p></article>
+    </div>
+    <p>Колода по умолчанию называется как книга. Для вставленного текста — как ты его назвал. В Настройках можно проверить, запущен ли Anki, и сложить все книги в одну колоду. Если Anki закрыт, кнопка скажет, что он недоступен. Слова в читалке при этом остаются.</p>
+
+    <h2>Где лежат книги и слова</h2>
+    <p>На Mac: <code>~/Library/Application Support/GlossReader</code>. На Windows: <code>%AppData%\GlossReader</code>. Удаление программы эту папку не стирает.</p>
+    <p>Ранние сборки хранили то же самое в папке <code>MyReader</code>. Новая сборка при первом запуске переименовывает её сама, если <code>GlossReader</code> ещё нет. Можно перенести заранее, пока программа закрыта:</p>
+    <ul>
+      <li><strong>Mac.</strong> В Finder: «Переход» → «Переход к папке…», вставь <code>~/Library/Application Support</code>. Переименуй <code>MyReader</code> в <code>GlossReader</code>.</li>
+      <li><strong>Windows.</strong> Нажми Win+R, вставь <code>%AppData%</code>, Enter. Переименуй <code>MyReader</code> в <code>GlossReader</code>.</li>
+    </ul>
+
+    
+  </main>
+
+  <footer class="foot">
+    <div class="wide">
+      <div class="foot-grid">
+        <div>
+          <strong>GlossReader</strong>
+          <p>Читалка для изучения иностранных языков. Её делает одна волонтёр.</p>
+        </div>
+        <ul>
+          <li><a href="guide.html">Как поставить</a></li>
+          <li><a href="notes.html">Что нового</a></li>
+          <li><a href="support.html">Поддержка</a></li>
+          <li><a href="data.html">Данные и лицензии</a></li>
+          <li><a href="privacy.html">Политика конфиденциальности</a></li>
+        </ul>
+        <ul>
+          <li>© Анжела Соменкова</li>
+          <li><a href="mailto:anzhela.somenkova@gmail.com">anzhela.somenkova@gmail.com</a></li>
+          <li><a href="https://t.me/non_player">Telegram: @non_player</a></li>
+        </ul>
+      </div>
+      <div class="foot-base"><span></span><!-- stats-link --></div>
+    </div>
+  </footer>
+</body>
+</html>
